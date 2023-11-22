@@ -15,30 +15,18 @@ function Home() {
 
     return (
         <div>
-            <h1>RPG</h1>
+            <h1 className="text-3xl font-extrabold text-center m-10">RPG</h1>
             {data.length !== 0 && data.map(player => (
-                <div key={player.id}>
-                    <h2>{player.id} - {player.name}</h2>
-                    <ul>
-                        <li>
-                            Point de vie : {player.lifePoint}
-                        </li>
-                        <li>
-                            Force : {player.strength}
-                        </li>
-                        <li>
-                            Endurance : {player.stamina}
-                        </li>
-                        <li>
-                            Agilité : {player.agility}
-                        </li>
-                        <li>
-                            Intelligence : {player.intellect}
-                        </li>
-                        <li>
-                            Chance : {player.luck}
-                        </li>
-                    </ul>
+
+                <div key={player.id} className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+
+                    <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{player.id} - {player.name}</h2>
+                    <h3 className="font-normal text-gray-700 dark:text-gray-400 mb-2">Point de vie :<span className="font-bold text-xl"> {player.lifePoint}</span></h3>
+                    <h3 className="font-normal text-gray-700 dark:text-gray-400 mb-2">Force : <span className="font-bold text-xl">{player.strength}</span></h3>
+                    <h3 className="font-normal text-gray-700 dark:text-gray-400 mb-2">Endurance : <span className="font-bold text-xl">{player.stamina}</span></h3>
+                    <h3 className="font-normal text-gray-700 dark:text-gray-400 mb-2">Agilité : <span className="font-bold text-xl">{player.agility}</span></h3>
+                    <h3 className="font-normal text-gray-700 dark:text-gray-400 mb-2">Intelligence : <span className="font-bold text-xl">{player.intellect}</span></h3>
+                    <h3 className="font-normal text-gray-700 dark:text-gray-400 mb-2">Chance : <span className="font-bold text-xl">{player.luck}</span></h3>
                 </div>
             ))}
         </div>
